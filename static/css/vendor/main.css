@@ -1,0 +1,31 @@
+body {
+	font-family: "Helvetica", "Arial", sans-serif;
+	background-color: black;
+}
+
+.main-disp {
+	padding-top: 64px;
+	/*padding-bottom: 64px;*/
+	width: 100%;
+	height: 100%;
+}
+
+.nav {
+	margin-top: 48px;
+	width: 256px;
+	height: auto;
+	padding: 12px;
+	background-color: rgba(30,30,30,1);
+	border-radius: 5px;
+}
+
+#subhead {
+	margin-top: 16px;
+	font-size: 18px;
+	color: white;
+}
+
+#subhead #copy {
+	color: rgba(255,255,255,0.7);
+	font-size: 10px;
+}
