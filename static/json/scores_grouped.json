@@ -1,0 +1,22 @@
+{
+   "autonomous": {
+      "designated_goal": 40,
+      "non_designated_goal": 20,
+      "floor_goal": 5,
+      "full_bridge_support": 20,
+      "partial_bridge_support": 10
+   },
+   "end_game": {
+      "flag_raised_high": 35,
+      "flag_raised_low": 20,
+      "pull_up_bar": 50
+   },
+   "drive_controlled": {
+      "floor_goal": 1,
+      "inner_goal": 2,
+      "outer_goal": 3
+   },
+   "bonus": {
+      "beam_even": 1.5
+   }
+}
