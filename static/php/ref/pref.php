@@ -1,9 +1,9 @@
 <?php
 	$preferences = json_decode(
 		'{
-		   "team": {
-			  "team_name":"Team Name",
-			  "team_color":"#FFFFFF"
+		   "team":
+              "team_name":"Team Name",
+              "team_color":"#FFFFFF"
 		   }
 		   "database": {
 		      "user":"db_username",
