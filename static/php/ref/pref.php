@@ -1,5 +1,5 @@
 <?php
-	$preferences = json_decode(
+	$preferences =
 		'{
 		   "team":
               "team_name":"Team Name",
@@ -9,10 +9,11 @@
 		      "user":"db_username",
 		      "pass":"db_pass",
 		      "addr":"localhost",
-		      "db_name":"robotics"
+		      "db_name":"robotics",
+		      "charset":"utf8"
 		   }
 		}'
-	);
+	;
 
 	function getPreferencesAsJSON() {
 		return $preferences;
