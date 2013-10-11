@@ -12,16 +12,18 @@
 			$this->pdo = null;
 		}
 
-		function prepareTeamInsertQuery(Team $team) {
+		function prepareTeamInsertQuery(Team $team, $populateQuery = false) {
 
 			$query = "INSERT INTO teams ( " . gatherTeamCols($team->getAbilities(), false) . " ) VALUES( " . gatherTeamCols($team->getAbilities(), true). " )";
 
 			$statement = $this->pdo->prepare($query);
 
-			foreach (json_decode($team->getAbilities()) as $key => $value) {
-				$statement->bindValue(":".$key, $value);
+			if($populateQuery) { 
+				foreach (json_decode($team->getAbilities()) as $key => $value) {
+					$statement->bindValue(":".$key, $value);
+				}
 			}
-
+			
 			return $statement;
 
 		}

@@ -49,5 +49,14 @@
 
 			return $projectedScore;
 		}
+
+		public function populateInsertStatement(PDOStatement $statement) {
+			foreach (json_decode($this->getAbilities()) as $key => $value) {
+				$statement->bindValue(":".$key, $value);
+			}
+
+			return $statement;
+
+		}
 	}
 ?>
