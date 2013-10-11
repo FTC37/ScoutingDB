@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="main-disp">
@@ -17,9 +18,14 @@
 					</small>
 				</span>
 				
-				<div class="nav">
-					<a href="#" class='btn btn-large btn-block btn-primary disabled'>Download Now (v0.1a)</a>
-					<a href="https://github.com/ttaylorr/ScoutingDB" class='btn btn-large btn-block'>Find us on GitHub</a>
+				
+				<div class="outer-nav">
+					<span class="last-commit">Fetching Last Commit...</span>			
+					
+					<div class="inner-nav">
+						<a href="#" class='btn btn-large btn-block btn-primary disabled'>Download Now (v0.1a)</a>
+						<a href="https://github.com/ttaylorr/ScoutingDB" class='btn btn-large btn-block'>Find us on GitHub</a>					
+					</div>
 				</div>
 
 				<small id="copy">
@@ -27,7 +33,22 @@
 				</small>
 			</center>
 		</div>
-
-				
+		
+		<script>
+			$(document).ready(function() {
+				$.ajax({
+					url: "https://api.github.com/repos/ttaylorr/ScoutingDB/commits",
+					type: "GET",
+					dataType: "json",
+					success: function(data) {
+						for(var i = 0; i < data.length; i++) {
+							$(".last-commit").html("Last Update: <a href='" + data[i]['html_url'] + "'>" + data[i]['commit']['message'] + "</a><br/>");
+							console.log(data[i]['commit']['message']);
+							break;
+						}
+					}
+				});
+			});		
+		</script>				
 	</body>
 </html>
