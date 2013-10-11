@@ -12,7 +12,7 @@
 			$this->pdo = null;
 		}
 
-		function prepareTeamInsertQuery(Team $team, $populateQuery = false) {
+		function prepareTeamQuery(Team $team, $populateQuery = false) {
 
 			$query = "INSERT INTO teams ( " . gatherTeamCols($team->getAbilities(), false) . " ) VALUES( " . gatherTeamCols($team->getAbilities(), true). " )";
 
