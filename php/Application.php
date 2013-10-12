@@ -1,5 +1,5 @@
 <?php
-	require_once "ref/pref.php";
+	require_once "ref/Preferences.php";
 
 	class Application {
 	

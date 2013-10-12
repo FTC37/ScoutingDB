@@ -13,14 +13,11 @@
 		<link rel="stylesheet" type="text/css" href="../static/css/global.css">
 	</head>
 	<body>
-		<div class="login-main" style='border-top-color:<?php echo($application->getTeamColor()); ?>'>
+		<div class="login-main" style='border-top-color:<?php echo($application->getTeamPreferences()['team_color']); ?>'>
 			<form>
 				<fieldset>
 					<div id="legend">
 						<legend>Login</legend>
-						<?php
-							print_r($application->getConfig());
-						?>
 					</div>
 
 					<div class="control-group">
@@ -30,6 +27,8 @@
 						<label for="password">Password</label>
 						<input type="password" id="password" name="user['password']" class="input-xlarge" />
 					</div>
+
+					<input type="submit" class="btn btn-success" value="Log In"/>
 				</fieldset>
 			</form>
 		</div>
