@@ -1,22 +1,14 @@
 <?php
-	include "ref/pref.php";
+	require_once "ref/pref.php";
 
 	class Application {
 	
-		$pdo = null;
-		$preferences = [];
-		
-		public function __construct() {
-			$preferences = json_decode(getPreferencesAsJSON());
+		private $pdo;
+		private $config;
 
-			enum(array(
-				'NullApplicationState',
-				'LoggingInApplicationState',
-				'LoggingOutApplicationState',
-				'GeneralScoutingApplicationState',
-				'ControlPannelApplicationState',
-				'PublicSiteApplicationState'
-			));
+		public function __construct() {
+			$this->pdo = null;
+			$this->config = json_decode((new Preferences())->getPreferencesAsJSON(),true);
 		}
 	
 		public function __destruct() { $this->pdo = null; }
@@ -39,15 +31,24 @@
 		public function getDatabase() {
 			return $this->pdo;
 		}
+
+		public function getConfig() {
+			return $this->config;
+		}
 		
 		public function getTeamColor() {
-			return isset($this->preferences['team']['team_color']) ? $this->preferences['team']['team_color'] : false;
+			return isset($this->config['team']['team_color']) ? $this->config['team']['team_color'] : false;
 		}
 		
 		public function getTeamName() {
-			return isset($this->preferences['team']['team_name']) ? $this->preferences['team']['team_name'] : false;
+			return isset($this->config['team']['team_name']) ? $this->config['team']['team_name'] : false;
 		}
 		
+		public function copy() {
+			return "&copy; Copyright 2013-2014 &sdot; Taylor Blau &amp; Jack Townsend <br/>All Rights Reserved";
+
+		}
+
 	}
 	
 ?>
