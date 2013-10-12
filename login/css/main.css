@@ -1,0 +1,22 @@
+/* login/css/main.css */
+.login-main {
+	background-color: rgba(255,255,255,1);
+	width: 650px;
+	padding: 10px;
+	padding-bottom: 0;
+	border-top-size: 3px;
+	border-top-style: solid;
+}
+
+.login-main label {
+	display: inline-block;
+	float: left;
+	text-align: right;
+	padding-top: 2px;
+	width: 165px;
+}
+
+.login-main input {
+	margin-left: 10px;
+}
+
