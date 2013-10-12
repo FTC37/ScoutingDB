@@ -32,10 +32,6 @@
 			return $this->pdo;
 		}
 
-		public function getConfig() {
-			return $this->config;
-		}
-		
 		public function getTeamColor() {
 			return isset($this->config['team']['team_color']) ? $this->config['team']['team_color'] : false;
 		}
