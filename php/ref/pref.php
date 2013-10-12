@@ -5,6 +5,7 @@
 			'{
 			   "team": {
 		          "team_name":"Team Name",
+		          "short_name":"tname",
 		          "team_color":"#FFFFFF"
 			   },
 			   "database": {

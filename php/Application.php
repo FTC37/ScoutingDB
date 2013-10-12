@@ -32,17 +32,12 @@
 			return $this->pdo;
 		}
 
-		public function getTeamColor() {
-			return isset($this->config['team']['team_color']) ? $this->config['team']['team_color'] : false;
-		}
-		
-		public function getTeamName() {
-			return isset($this->config['team']['team_name']) ? $this->config['team']['team_name'] : false;
+		public function getTeamPreferences() {
+			return $this->config['team'];
 		}
 		
 		public function copy() {
 			return "&copy; Copyright 2013-2014 &sdot; Taylor Blau &amp; Jack Townsend <br/>All Rights Reserved";
-
 		}
 
 	}
