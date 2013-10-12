@@ -6,7 +6,7 @@
 			   "team": {
 		          "team_name":"Team Name",
 		          "short_name":"tname",
-		          "team_color":"#FFFFFF"
+		          "team_color":"#48b7b9"
 			   },
 			   "database": {
 			      "user":"db_username",

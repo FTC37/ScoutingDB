@@ -37,7 +37,7 @@
 		}
 		
 		public function copy() {
-			return "&copy; Copyright 2013-2014 &sdot; Taylor Blau &amp; Jack Townsend <br/>All Rights Reserved";
+			return "<small class='copy'><span>&copy; Copyright 2013-2014 &sdot; Taylor Blau &amp; Jack Townsend - All Rights Reserved</span></small>";
 		}
 
 	}
