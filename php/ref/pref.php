@@ -21,4 +21,8 @@
 	function getPreferencesAsJSON() {
 		return $preferences;
 	}
+
+	function getPreferences() {
+		return json_decode($preferences);
+	}
 ?>
