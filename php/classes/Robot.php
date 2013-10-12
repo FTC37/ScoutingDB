@@ -1,5 +1,5 @@
 <?php
-	class Team {
+	class Robot {
 		
 		private $abilities;
 		private $score_value;
