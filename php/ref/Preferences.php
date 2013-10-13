@@ -9,8 +9,8 @@
 		          "team_color":"#48b7b9"
 			   },
 			   "database": {
-			      "user":"db_username",
-			      "pass":"db_pass",
+			      "user":"root",
+			      "pass":"",
 			      "addr":"localhost",
 			      "db_name":"robotics",
 			      "charset":"utf8"

@@ -14,11 +14,11 @@
 		public function __destruct() { $this->pdo = null; }
 	
 		public function connect() {
-			$username = $config['database']['user'];
-			$password = $config['database']['pass'];
-			$address = $config['database']['addr'];
-			$db_name = $config['database']['db_name'];
-			$charset = $config['database']['charset'];
+			$username = $this->config['database']['user'];
+			$password = $this->config['database']['pass'];
+			$address = $this->config['database']['addr'];
+			$db_name = $this->config['database']['db_name'];
+			$charset = $this->config['database']['charset'];
 			
 			try { 
 				$pdo = new PDO("mysql:host=" . $address . ";dbname=" . $db_name . ";charset=" . $charset, $username, $password);
