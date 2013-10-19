@@ -8,12 +8,19 @@
 		          "short_name":"tname",
 		          "team_color":"#48b7b9"
 			   },
-			   "upstream": {
+			   "upstream_database": {
 			      "user":"root",
 			      "pass":"",
 			      "addr":"localhost",
 			      "db_name":"robotics",
 			      "charset":"utf8"
+			   },
+			   "local_database": {
+			   	  "user":"root",
+			   	  "pass","",
+			   	  "addr":"localhost",
+			   	  "db_name","robotics",
+			   	  "charset","utf8"
 			   },
 			   "misc": {
 			   	  "setup_completed":false
