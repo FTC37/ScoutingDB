@@ -7,8 +7,8 @@
 		          "team_name":"Team Name",
 		          "short_name":"tname",
 		          "team_color":"#48b7b9"
-			   },
-			   "database": {
+			   }
+			   "upstream": {
 			      "user":"root",
 			      "pass":"",
 			      "addr":"localhost",
