@@ -8,6 +8,8 @@
 
 		public function __construct($user_id, $user_pass, $pdo) {
 
+			session_start();
+
 			$this->user_id = $user_id;
 			$this->user_pass = $user_pass;
 
@@ -48,16 +50,43 @@
 			# Returns the hash for a user_id if there is one, else false
 		}
 
-		private function insertServerSession() {
-			# Inserts the session into the table of active sessions
+		private function getSeverSession() {
+			$sessions = [];
+
+			$query = "SELECT * FROM session_session WHERE user_id = '" . $this->user_id . "'";
+
+			foreach($this->pdo->query($query) as $row) {
+				$sessions[] = $row;
+			}
+
+			return $sessions;
 		}
 
-		private function createLocalSession() {
-			# Inserts cookies that validate the session
+		private function insertServerSession() {
+			#create session ID...
+			foreach($this->pdo->query("SELECT MD5(RAND()) as session_id") as $row) {
+				$session_id = $row['session_id'];
+			}
+
+			$sql = "INSERT INTO session_session ('user_id','expire_time','session_hash' VALUES (':user_id',':expire_time',':session_hash'))";
+
+			$statement = $pdo->prepare($sql);
+			
+			$statement->bind_param(":user_id", $this->user_id, PDO::PARAM_INT);
+			$statement->bind_param(":expire_time", $this->user_id, PDO::PARAM_INT);
+			$statement->bind_param(":session_hash", $this->user_id, PDO::PARAM_STR);
+			
+			$statement->execute();
+
 		}
 
 		private function deleteServerSession() {
 			# Delets a specific server session (not a logout-all)
+		}
+
+		private function createLocalSession() {
+			$_SESSION['user_id'] = $this->user_id;
+			$_SESSION['session_hash'] = md5($this->getServerSession()['id']);
 		}
 
 		private function destroyLocalSession() {
