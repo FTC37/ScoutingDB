@@ -7,7 +7,7 @@
 		          "team_name":"Team Name",
 		          "short_name":"tname",
 		          "team_color":"#48b7b9"
-			   }
+			   },
 			   "upstream": {
 			      "user":"root",
 			      "pass":"",

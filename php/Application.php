@@ -4,7 +4,7 @@
 	class Application {
 	
 		private $pdo;
-		private $config;
+		public $config;
 
 		public function __construct() {
 			$this->pdo = null;
